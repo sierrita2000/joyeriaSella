@@ -1644,13 +1644,16 @@
 
 .derecha__tallas__tallas {
   margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .boton_talla {
   padding: .8rem 1rem;
   border: 2px solid rgb(160, 160, 160);
   background-color: rgb(219, 219, 219);
-  margin: 0 .4rem;
+  margin: .4rem;
   font-size: 16px;
   filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
   transition: all .2s ease-in-out;
