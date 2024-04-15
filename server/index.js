@@ -3,6 +3,7 @@ import 'dotenv/config'
 import cors from 'cors'
 import { router } from './routes/index.routes.js'
 import { errores } from './middlewares/errores.js'
+import path from 'path'
 
 const app = express()
 const PORT = process.env.PORT
@@ -11,7 +12,7 @@ app.use(express.json())
 app.use(cors())
 app.use(express.urlencoded({ extended: false }))
 
-app.use('/public', express.static('uploads'))
+app.use('/public', express.static(path.join(process.cwd(), 'uploads')))
 
 app.get("/", (req, res, next) => {
     res.send("<h1>BIENVENIDO A MI API</h1>")
