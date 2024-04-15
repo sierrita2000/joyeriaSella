@@ -1299,6 +1299,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  margin: .5rem;
   padding: 3rem 1rem 1rem;
   animation: aparecer-modal .5s ease-in-out;
 }
@@ -1502,17 +1503,15 @@
 }
 
 .producto_individual__izquierda {
-  height: 100%;
   width: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 4rem 0 0;
   padding: 2rem;
 }
 
 .producto_individual__izquierda img {
-  width: 100%;
+  width: 70%;
   animation: aparecer-anillo .5s ease-in-out;
 }
 

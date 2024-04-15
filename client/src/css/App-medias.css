@@ -76,6 +76,14 @@
     .derecha__informacion__descripcion {
         padding: 3rem .5rem;
     }
+
+    .producto_individual__izquierda {
+        align-items: flex-start;
+    }
+
+    .producto_individual__izquierda img {
+        width: 100%;
+    }
 }
 
 @media (max-width: 1200px) {
@@ -628,6 +636,37 @@
     .mis_compras__compra__total p {
         font-size: 24px;
     }
+
+    .form_usuario__localizacion {
+        flex-direction: column;
+    }
+
+    .datos_personales__form_usuario div {
+        width: 100%;
+    }
+
+    .modal_compra__contenido {
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+
+    .modal_compra__paso_pago {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .paso_pago__datos_pago {
+        padding: 1rem 0;
+    }
+
+    .paso_pago__datos_pago,
+    .paso_pago__resumen {
+        width: 90%;
+    }
+
+    .carrito__productos__producto {
+        justify-content: center;
+    }
 }
 
 @media (max-width: 500px) {
@@ -707,6 +746,15 @@
     .mis_compras__compra {
         width: 92%;
     }
+
+    .modal__pasos__paso {
+        font-size: 16px;
+    }
+
+    .boton_modal_pasar_pagina, 
+    .boton_modal__comprar {
+        font-size: 16px;
+    }
 }
 
 @media (max-width:390px) {
@@ -780,6 +828,10 @@
     .producto__informacion__precio {
         font-size: 35px;
     }
+
+    .datos_personales__form_usuario div label {
+        font-size: 16px;
+    }
 }
 
 @media (max-width: 330px) {
@@ -820,6 +872,16 @@
 
     .form__fecha_caducidad input, .form__cod_seguridad input {
         width: inherit;
+    }
+
+    .modal__pasos__paso {
+        font-size: 14px;
+    }
+
+    .boton_modal_pasar_pagina, 
+    .boton_modal__comprar {
+        font-size: 14px;
+        margin: .4rem;
     }
 }
 
