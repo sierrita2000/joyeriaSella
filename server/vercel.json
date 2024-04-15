@@ -1,11 +1,9 @@
 {
     "version" : 2,
     "builds"  : [ 
-        { "src" : "index.js"  , "use" : "@vercel/node" },
-        { "src" : "/uploads/$1"  , "use" : "@vercel/static" }
+        { "src" : "index.js"  , "use" : "@vercel/node" }
     ],
     "routes"  : [ 
-        { "src": "/public/(.*)", "dest": "/uploads/$1" },
         { "src" : "/(.*)"     , "dest": "index.js" }  
     ]
 }
