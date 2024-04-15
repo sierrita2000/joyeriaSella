@@ -50,9 +50,9 @@ export default function MenuCabecera () {
                     <ul>
                         <li><Link to="/" className="boton boton_nav"><img src="../../sella_logo.png" /></Link></li>
                         <li className="boton_hamburguesa" onClick={abrirMenu}><i className="fa-solid fa-bars"></i></li>
-                        <li className="boton_menu"><BotonNavegacion categoria="COLLARES" abrirMenu={abrirMenu} /></li>
-                        <li className="boton_menu"><BotonNavegacion categoria="PULSERAS" abrirMenu={abrirMenu} /></li>
-                        <li className="boton_menu"><BotonNavegacion categoria="ANILLOS" abrirMenu={abrirMenu} /></li>
+                        <li className="boton_menu"><BotonNavegacion categoria="COLLARES" /></li>
+                        <li className="boton_menu"><BotonNavegacion categoria="PULSERAS" /></li>
+                        <li className="boton_menu"><BotonNavegacion categoria="ANILLOS" /></li>
                     </ul>
                     <div className="cabecera__botones">
                         { usuarioContext[0] && <Link className="cabecera__botones__link" to={`/compras/${usuarioContext[0]?._id}`}><p className="cabecera__botones__mis_compras">MIS COMPRAS</p></Link> }

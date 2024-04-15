@@ -4,9 +4,21 @@ export default function BotonNavegacion ({ categoria, abrirMenu}) {
 
     const navigate = useNavigate()
 
+    const cerrarMenu = () => {
+        const botones_menu = document.querySelectorAll('.inicio__hero_image__cabecera ul .boton_menu')
+        botones_menu.forEach(elemento => {
+            elemento.classList.remove('menu_desplegado')
+        })
+        const menu = document.querySelector('.inicio__hero_image__cabecera ul')
+        menu.classList.remove('menu_menu_desplegado')
+        const boton_hamburguesa = document.querySelector('.inicio__hero_image__cabecera ul .boton_hamburguesa i')
+        boton_hamburguesa.classList.add('fa-bars')
+        boton_hamburguesa.classList.remove('fa-xmark')
+    }
+
     return (
         <div className="boton_navegacion">
-            <p onClick={() => { navigate(`/${categoria.toLowerCase()}`); abrirMenu() }}>
+            <p onClick={() => { navigate(`/${categoria.toLowerCase()}`); cerrarMenu() }}>
                 {categoria}
             </p>
             <div className="boton_navegacion__opciones">
