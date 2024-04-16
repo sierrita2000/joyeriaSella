@@ -12,10 +12,7 @@ app.use(express.json())
 app.use(cors())
 app.use(express.urlencoded({ extended: false }))
 
-app.use('/public', express.static(path.join(process.cwd(), 'uploads')), (req, res) => {
-    try { () => res.status(200).send("entra en la ruta public") }
-    catch{ error => next(error) }
-})
+app.use('/public', express.static(path.join(process.cwd(), 'uploads')))
 
 app.get("/", (req, res, next) => {
     res.send("<h1>BIENVENIDO A MI API</h1>")
