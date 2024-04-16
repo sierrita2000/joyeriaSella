@@ -12,6 +12,9 @@ app.use(express.json())
 app.use(cors())
 app.use(express.urlencoded({ extended: false }))
 
+app.use('/public', (req, res) => {
+    res.send(path.join(process.cwd(), 'uploads'))
+})
 app.use('/public', express.static(path.join(process.cwd(), 'uploads')))
 
 app.get("/", (req, res, next) => {
