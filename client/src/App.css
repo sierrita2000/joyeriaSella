@@ -399,8 +399,8 @@
   margin: 0 1.5rem;
   box-shadow: rgba(50, 50, 93, 0.25) -13px 13px 27px -5px, rgba(0, 0, 0, 0.3) -8px 8px 16px -8px;
   cursor: pointer;
-  transform: translateY(-4rem);
-  opacity: 0%;
+  /* transform: translateY(-4rem);
+  opacity: 0%; */
   overflow: hidden;
   transition: transform .3s ease-in-out, box-shadow .3s ease-in-out, opacity .3s ease-in-out;
 }
@@ -458,8 +458,8 @@
   font-weight: bold;
   margin: 0 0 2rem;
   color: whitesmoke;
-  transform: translateX(-4rem);
-  opacity: 0%;
+  /* transform: translateX(-4rem);
+  opacity: 0%; */
   cursor: default;
 }
 
@@ -468,8 +468,8 @@
   font-style: italic;
   letter-spacing: 2px;
   color: whitesmoke;
-  transform: translateX(-4rem);
-  opacity: 0%;
+  /* transform: translateX(-4rem);
+  opacity: 0%; */
   cursor: default;
 }
 
@@ -506,8 +506,8 @@
   font-family: var(--Cormorant);
   color: whitesmoke;
   font-size: 30px;
-  transform: translateY(-2rem);
-  opacity: 0%;
+  /* transform: translateY(-2rem);
+  opacity: 0%; */
 }
 
 .footer__informacion__redes {
@@ -518,8 +518,8 @@
   color: whitesmoke;
   font-size: 35px;
   margin: 1rem .5rem 0;
-  transform: translateY(-2rem);
-  opacity: 0%;
+  /* transform: translateY(-2rem);
+  opacity: 0%; */
   cursor: pointer;
   transition: filter .2s ease-in-out;
 }
@@ -537,8 +537,8 @@
 .footer__mapa iframe {
   height: 80%;
   width: 80%;
-  transform: translateY(-2rem);
-  opacity: 0%;
+  /* transform: translateY(-2rem);
+  opacity: 0%; */
   transition: filter .2s ease-in-out;
 }
 
@@ -560,8 +560,8 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  transform: translateX(28rem);
-  opacity: 0%;
+  /* transform: translateX(28rem);
+  opacity: 0%; */
   padding: 0 5rem;
 }
 
