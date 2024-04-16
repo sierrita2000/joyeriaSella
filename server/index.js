@@ -4,6 +4,7 @@ import cors from 'cors'
 import { router } from './routes/index.routes.js'
 import { errores } from './middlewares/errores.js'
 import path from 'path'
+import { fileURLToPath } from 'url'
 
 const app = express()
 const PORT = process.env.PORT
@@ -12,10 +13,7 @@ app.use(express.json())
 app.use(cors())
 app.use(express.urlencoded({ extended: false }))
 
-app.use('/public', (req, res) => {
-    res.send(path.join(process.cwd(), 'uploads'))
-})
-app.use('/public', express.static(path.join(process.cwd(), 'uploads')))
+app.use('/public', express.static(path.dirname(fileURLToPath(import.meta.url)) + '/uploads'))
 
 app.get("/", (req, res, next) => {
     res.send("<h1>BIENVENIDO A MI API</h1>")
