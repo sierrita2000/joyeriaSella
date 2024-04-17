@@ -6,7 +6,6 @@ export default function LoginSignup () {
 
     const { VITE_API_HOST } = import.meta.env
     const [ formRegistro, setFormRegistro ] = useState(false)
-
     const [ error, setError ] = useState("")
     
     const usuarioContext = useContext(UsuarioContext)
@@ -86,6 +85,20 @@ export default function LoginSignup () {
         }
     }
 
+    const limpiarFormulario = () => {
+        const nombre = document.getElementById('login_signup_usuario')
+        const password = document.getElementById('login_signup_password')
+        const password_repeat = document.getElementById('login_signup_password_repeat')
+
+        nombre.value = ""
+        password.value = ""
+        if (password_repeat) password_repeat.value = ""
+
+        setError('')
+
+        setFormRegistro(!formRegistro)
+    }
+
     return (
             <div className="login_signup">
                 <img src="../../sella_logo.png" />
@@ -106,7 +119,7 @@ export default function LoginSignup () {
                     {error && <p className="login_signup__error">¡{error}!</p>}
                 </form>
                 <p>{ formRegistro ? "¿Ya tienes cuenta?" : "¿Aún no tienes cuenta?" }</p>
-                <p>{ formRegistro ? "logueate" : "regístrate" } <button className="boton boton_registro" onClick={() => setFormRegistro(!formRegistro)} >AQUÍ</button></p>
+                <p>{ formRegistro ? "logueate" : "regístrate" } <button className="boton boton_registro" onClick={limpiarFormulario} >AQUÍ</button></p>
             </div>
     )
 }
