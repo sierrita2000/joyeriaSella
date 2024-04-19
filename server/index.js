@@ -13,10 +13,6 @@ app.use(express.json())
 app.use(cors())
 app.use(express.urlencoded({ extended: false }))
 
-app.use("/prueba", (req, res) => {
-    res.status(200).send(path.dirname(fileURLToPath(import.meta.url)))
-})
-
 app.use('/public', express.static(path.dirname(fileURLToPath(import.meta.url)) + '/uploads'))
 
 app.get("/", (req, res, next) => {
