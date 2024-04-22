@@ -9,9 +9,7 @@
         }
     },
     "rewrites": [
+        { "src" : "/public/(.*)", "dest": "/public" },
         { "src" : "/(.*)", "dest": "index.js" }
-    ],
-    "static": {
-        "public": "public"
-    }
+    ]
 }
