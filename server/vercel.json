@@ -6,7 +6,7 @@
         }
     },
     "rewrites": [
-        { "src" : "/public/(.*)", "dest": "/public" },
-        { "src" : "/(.*)", "dest": "index.js" }
+        { "source" : "/public/(.*)", "destination": "/public" },
+        { "source" : "/(.*)", "destination": "index.js" }
     ]
 }
