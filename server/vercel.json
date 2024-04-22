@@ -2,7 +2,7 @@
     "version" : 2,
     "functions": {
         "index.js": {
-            "runtime": "@vercel/node"
+            "runtime": "Node.js 20.x"
         }
     },
     "rewrites": [
