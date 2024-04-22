@@ -2,7 +2,7 @@
     "version" : 2,
     "functions": {
         "index.js": {
-            "runtime": "Node.js"
+            "runtime": "node"
         }
     },
     "rewrites": [
