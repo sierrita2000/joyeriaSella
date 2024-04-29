@@ -13,7 +13,7 @@ app.use(express.json())
 app.use(cors())
 app.use(express.urlencoded({ extended: false }))
 
-app.use('/public', express.static(path.dirname(fileURLToPath(import.meta.url)) + '/public'))
+app.use('/', express.static(path.dirname(fileURLToPath(import.meta.url)) + '/public'))
 
 app.get("/", (req, res, next) => {
     res.send("<h1>BIENVENIDO A MI API</h1>")
