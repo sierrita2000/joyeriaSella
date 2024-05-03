@@ -7,6 +7,10 @@ export default function DatosPersonales ({ correo, setCorreo, ciudad, setCiudad,
 
     const usuarioContext = useContext(UsuarioContext)
 
+    /**
+     * Modifica los estados de los datos personales.
+     * @param {Object} data 
+     */
     const asociarDatosPersonales = (data) => {
         setCorreo(data.correo)
         setCiudad(data.ciudad)
@@ -15,6 +19,9 @@ export default function DatosPersonales ({ correo, setCorreo, ciudad, setCiudad,
         setDatosPersonalesIniciales([data.correo, data.ciudad, data.provincia, data.domicilio])
     }
 
+    /**
+     * La primera vez que carga el componente recupera los datos personales del usuario si existen.
+     */
     useEffect(() => {
         if(usuarioContext[0]) {
             fetch(`${VITE_API_HOST}/usuarios/${usuarioContext[0]._id}`)

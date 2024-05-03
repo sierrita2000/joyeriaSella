@@ -1,17 +1,29 @@
+/**
+ * Anima un elemento del DOM.
+ * @param {Element} elemento 
+ * @returns 
+ */
+const animarElemento = ( elemento ) => {
+    const top = window.scrollY //Marca el scroll en vertical que se hace en px. Toma como referencia el borde superior de la pantalla.
+    const screenHeight = screen.height //Constante. Indica el largo la altura de la pantalla.
+    const offset = elemento.offsetTop //Indica la distancia que hay desde el borde superior del elemento hasta el borde superior del componente.
+    const height = elemento.offsetHeight //Constante. Indica el alto del elemento.
+
+    if ( ( top + (screenHeight / 2) ) > ( offset - height ) ) return true
+    else return false
+}
+
+/**
+ * Anima un elemento, recibiendo el elemento, un array con las animaciones, y las opciones.
+ * @param {Element} elemento 
+ * @param {Array} keyframes 
+ * @param {Object} options 
+ */
+const crearAnimacion = ( elemento, keyframes, options ) => {
+    elemento.animate(keyframes, options)
+}
+
 const cargarEventos = () => {
-    const animarElemento = ( elemento ) => {
-        const top = window.scrollY
-        const screenHeight = screen.height
-        const offset = elemento.offsetTop
-        const height = elemento.offsetHeight
-
-        if ( ( top + (screenHeight / 2) ) > ( offset - height ) ) return true
-        else return false
-    }
-
-    const crearAnimacion = ( elemento, keyframes, options ) => {
-        elemento.animate(keyframes, options)
-    }
 
     window.addEventListener("scroll", () => {
         if ( document.querySelector('.inicio') != null ) {
@@ -58,4 +70,5 @@ const cargarEventos = () => {
     })
 }
 
+// Al cargar la página en la pantalla, se crean los eventos de escucha de ciertos elementos.
 window.onload = cargarEventos

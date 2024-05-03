@@ -11,6 +11,9 @@ export default function HeroImage () {
 
     const [ dataAnillo ] = useFetch("/productos/anillo-random")
 
+    /**
+     * Solo en la primera carga del componente setea el color al azar
+     */
     useEffect(() => {
         (Math.floor(Math.random() * 2) === 0) ? setColor('oro') : setColor('plata')
     }, [])

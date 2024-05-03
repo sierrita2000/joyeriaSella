@@ -7,6 +7,11 @@ export default function DatosTarjeta ({ numeroTarjeta, setNumeroTarjeta, fechaCa
 
     const usuarioContext = useContext(UsuarioContext)
 
+    /**
+     * Si es un valor de tipo Number devuelve true, si no false.
+     * @param {value} e 
+     * @returns {boolean}
+     */
     const escribirNumeros = (e) => {
         if (!isNaN(e)) {
             return true
@@ -15,6 +20,10 @@ export default function DatosTarjeta ({ numeroTarjeta, setNumeroTarjeta, fechaCa
         }
     }
 
+    /**
+     * Cambia el estado de los datos de la tarjeta.
+     * @param {Object} data 
+     */
     const asociarDatosDePago = (data) => {
         setNumeroTarjeta(data.n_tarjeta)
         setCodigoSeguridad(data.codigo_seguridad)
@@ -24,6 +33,9 @@ export default function DatosTarjeta ({ numeroTarjeta, setNumeroTarjeta, fechaCa
         setDatosPagoIniciales([data.n_tarjeta, fecha[0], fecha[1], data.codigo_seguridad])
     }
 
+    /**
+     * En la primera carga del componenete devuelve los datos de la tarjeta del usuario si existen.
+     */
     useEffect(() => {
         if(usuarioContext[0]) {
             fetch(`${VITE_API_HOST}/datosdePago/usuario/${usuarioContext[0]._id}`)

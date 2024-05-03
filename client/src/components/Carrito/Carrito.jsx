@@ -9,6 +9,10 @@ export default function Carrito ({ cerrarPanel }) {
 
     const [ modalCompraAbierto, setModalCompraAbierto ] = useState(false)
 
+    /**
+     * Calcula el precio total restando el descuento.
+     * @returns {number}
+     */
     const calcularTotal = () => {
         let total = 0
 
@@ -45,6 +49,7 @@ export default function Carrito ({ cerrarPanel }) {
                 )
             }
             {
+                // No se ve el modal de compra hasta que el usuario pulsa el botón de compra
                 modalCompraAbierto && <ModalCompra setModalCompraAbierto={setModalCompraAbierto} total={calcularTotal()} cerrarPanel={cerrarPanel} />
             }
         </div>

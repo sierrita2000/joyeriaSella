@@ -31,21 +31,30 @@ export default function ModalCompra ({ setModalCompraAbierto, total, cerrarPanel
     const [ ano, setAno ] = useState('')
     const [ codSeguridad, setCodSeguridad ] = useState('') 
 
+    /**
+     * Comprueba si el usuario ha rellenado todos los campos del formulario.
+     * @param {Array} campos 
+     * @returns {boolean}
+     */
     const camposRellenos = (campos) => {
         let todos_campos_rellenos = true
         campos.forEach(c => { if(!c) todos_campos_rellenos = false })
         return todos_campos_rellenos
     }
 
+    /**
+     * Ejecuta la compra haciendo una llamada a la API.
+     */
     const realizarCompra = async() => {
         if(confirm("¿Seguro que deseas realizar la compra?")) {
+            //Identifica si la compra la ha realizado un usuario registrado o no.
             const id_usuario = usuarioContext[0]?._id || null
             const response = await fetch(`${VITE_API_HOST}/compras/realizar-compra`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
                 },
-                body: JSON.stringify({
+                body: JSON.stringify({              //Objecto de compra.
                     id_usuario: id_usuario,
                     correo: correo,
                     ciudad: ciudad,
@@ -58,13 +67,21 @@ export default function ModalCompra ({ setModalCompraAbierto, total, cerrarPanel
             })
             const data = await response.json()
 
+            /**
+             * Si la respuesta es buena:
+             *  - Limpiamos el localStorage.
+             *  - Vaciamos el estado del carrito.
+             *  - Mostramos un mensaje de "compra realizada con éxito".
+             *  - Cerramos el modal de compra y el panel de la derecha.
+             *  - Nos redirige al panel de compra si somos un usuario logueado.
+             */
             if (data.status === 'ok') {
                 localStorage.clear()
                 carritoContext[1]([])
                 mensajeContext[1](data.message)
                 setModalCompraAbierto(false)
                 cerrarPanel()
-                navigate(`/compras/${usuarioContext[0]._id}`)
+                if(usuarioContext[0]) navigate(`/compras/${usuarioContext[0]._id}`)
             } else {
                 console.error(data)
             }

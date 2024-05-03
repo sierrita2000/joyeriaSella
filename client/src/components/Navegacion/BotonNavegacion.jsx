@@ -4,6 +4,9 @@ export default function BotonNavegacion ({ categoria, abrirMenu}) {
 
     const navigate = useNavigate()
 
+    /**
+     * Cierra el menú.
+     */
     const cerrarMenu = () => {
         const botones_menu = document.querySelectorAll('.inicio__hero_image__cabecera ul .boton_menu')
         botones_menu.forEach(elemento => {

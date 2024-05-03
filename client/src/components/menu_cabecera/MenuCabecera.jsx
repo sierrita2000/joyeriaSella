@@ -16,6 +16,10 @@ export default function MenuCabecera () {
     const [ productosCarrito, setProductosCarrito ] = useState([])
     const [ mensaje, setMensaje ] = useState("")
 
+    /**
+     * Cuenta todos los productos que hay en el carrito.
+     * @returns {Number}
+     */
     const cantidadProductosEnCarrito = () => {
         let cantidad_productos = 0
 
@@ -26,6 +30,9 @@ export default function MenuCabecera () {
         return cantidad_productos
     }
 
+    /**
+     * Abre el menu al pulsar en el menú hamburguesa cuando el responsive oculta el menú.
+     */
     const abrirMenu = () => {
         const botones_menu = document.querySelectorAll('.inicio__hero_image__cabecera ul .boton_menu')
         botones_menu.forEach(elemento => {
@@ -38,6 +45,10 @@ export default function MenuCabecera () {
         boton_hamburguesa.classList.toggle('fa-xmark')
     }
 
+    /**
+     * Tras la primera carga del componente recoge todos los componenetes que hay en el localstorage y los carga en el programa.
+     * Estos se hace para recuperar lo que teniamos en el carrito en caso de cerrar la pantalla.
+     */
     useEffect(() => {
         const productos = JSON.parse(localStorage.getItem("productos_carrito"))
         productos && setProductosCarrito(productos)

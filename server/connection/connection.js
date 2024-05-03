@@ -1,6 +1,10 @@
 import mongoose from 'mongoose'
 import 'dotenv/config'
 
+
+/**
+ * Inicia la conexión con mi BBDD de Mongo.
+ */
 export const iniciar_conexion = async () => {
     console.log('iniciando conexion ...')
 

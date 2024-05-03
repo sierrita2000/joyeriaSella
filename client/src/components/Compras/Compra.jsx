@@ -2,6 +2,10 @@ import ProductoCarrito from "../Carrito/ProductoCarrito"
 
 export default function Compra ({ correo, ciudad, provincia, domicilio, productos, n_tarjeta, total }) {
 
+    /**
+     * Cambia el formato del número de tarjeta sustituyendo los 3 primeros conjuntos de números por X para ocultarlos.
+     * @returns {String}
+     */
     const formatoTarjetaOculta = () => {
         let nueva_tarjeta = "xxxx xxxx xxxx "
         
